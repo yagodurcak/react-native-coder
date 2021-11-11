@@ -22,7 +22,7 @@ const StartGame = ({setconfirmNumber}) => {
 
     const confirmarNumber = () => {
       const numerofinal = parseInt(numero)
-      if (numerofinal === NaN || numerofinal <= 0 || numero > 99) {
+      if (numerofinal === "" || numerofinal === NaN || numerofinal <= 0 || numero > 99) {
         setErrores(true) ;
         return;
       }else {
@@ -51,7 +51,7 @@ const StartGame = ({setconfirmNumber}) => {
         </View>
             </Card>
             {validacion}
-                <Text>Elija un número</Text>
+                
         </View>
     )
 }
