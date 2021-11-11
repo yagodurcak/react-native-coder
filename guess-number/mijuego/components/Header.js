@@ -23,7 +23,9 @@ const styles = StyleSheet.create({
     headerTitle: {
             color: 'white',
             fontSize: 22,
-            fontWeight: "700"
+            // fontWeight: "700",
+         
+            fontFamily: 'Mohave',
           },
         
 })

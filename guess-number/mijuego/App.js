@@ -1,14 +1,24 @@
 import { Button, Keyboard, StyleSheet, Text, TouchableWithoutFeedback, View, _Text } from 'react-native';
 import React, {useEffect, useState} from 'react';
 
+import AppLoading from 'expo-app-loading';
 import Header from './components/Header';
 import StartGame from './screens/StartGame';
+import { useFonts } from 'expo-font';
+
+const FONT_DEFAULT = 'Mohave';
 
 export default function App() {
 
+  const [loaded] = useFonts({
+    [FONT_DEFAULT]: require('./assets/fonts/Roboto-BlackItalic.ttf'),
+
+  });
+  
   const [confirmNumber, setconfirmNumber] = useState(NaN);
   const [segundaConfirm, setsegundaConfirm] = useState(NaN)
-
+  
+  if (!loaded) return <AppLoading/>;
 
   const secondconfirm = () => {
     setsegundaConfirm(confirmNumber)
